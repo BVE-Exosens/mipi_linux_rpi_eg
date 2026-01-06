@@ -97,6 +97,11 @@ then
          echo "# Uncomment the following line to enable Dione camera" | sudo tee -a $CONFIG_FILE
          echo "#dtoverlay=dione-ir" | sudo tee -a $CONFIG_FILE
       fi
+      if [ ! $(grep "dtoverlay=microlynx-mipi" $CONFIG_FILE) ]
+      then
+         echo "# Uncomment the following line to enable Microlynx camera" | sudo tee -a $CONFIG_FILE
+         echo "#dtoverlay=microlynx-mipi" | sudo tee -a $CONFIG_FILE
+      fi
 
    # Install rootfs scripts
    sudo rsync -iahHAXxvz --progress rootfs/ /
