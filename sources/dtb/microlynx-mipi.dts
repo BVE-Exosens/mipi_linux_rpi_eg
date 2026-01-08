@@ -35,6 +35,8 @@
 				rotation = <180>;
 				orientation = <2>;
 
+				line-height = <128>;
+
 				port {
 					microlynx_i2c_endpoint: endpoint {
 						remote-endpoint = <&microlynx_csi_endpoint>;
@@ -45,6 +47,10 @@
 				};
 			};
 		};
+	};
+
+	__overrides__ {
+		line-height = <&xenics_microlynx>,"line-height:0";
 	};
 
 	csi_frag: fragment@4 {
