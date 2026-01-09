@@ -582,6 +582,12 @@ static int microlynx_probe(struct i2c_client *client)
    return ret;
 }
 
+static void microlynx_remove(struct i2c_client *client)
+{
+    GENCPCLIENT_Cleanup();
+    dev_info(&client->dev, "Microlynx module removed\n");
+}
+
 // This is defined in the device tree
 static const struct of_device_id microlynx_device_id[] = {
    { .compatible = "xenics,microlynx" },
@@ -595,6 +601,7 @@ static struct i2c_driver microlynx_driver = {
       .of_match_table = microlynx_device_id,
    },
    .probe = microlynx_probe,
+   .remove = microlynx_remove,
 };
 
 module_i2c_driver(microlynx_driver);
