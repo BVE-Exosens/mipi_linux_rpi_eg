@@ -13,11 +13,11 @@
 #include <media/v4l2-device.h>
 #include <media/v4l2-event.h>
 
-#include "lib/libunio.h"
-#include "lib/gencp_client.h"
+#include "gencp-over-i2c/libunio.h"
+#include "gencp-over-i2c/gencp_client.h"
 
 #define PREFIX "I2C test kmodule"
-#include "lib/liblogger.h"
+#include "gencp-over-i2c/liblogger.h"
 
 // #define DEFAULT_WIDTH 1024
 // #define DEFAULT_HEIGHT 128

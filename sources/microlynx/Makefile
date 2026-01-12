@@ -1,10 +1,10 @@
 microlynx_basic-objs := \
 	microlynx_basic_kmod.o \
-	lib/libunio.o \
-	lib/libunio_extras.o \
-	lib/nb_timer.o \
-	lib/gencp_common.o \
-	lib/gencp_client.o
+	gencp-over-i2c/libunio.o \
+	gencp-over-i2c/libunio_extras.o \
+	gencp-over-i2c/nb_timer.o \
+	gencp-over-i2c/gencp_common.o \
+	gencp-over-i2c/gencp_client.o
 
 obj-m := microlynx_basic.o
 
